@@ -6,6 +6,7 @@ metadata:
 data:
   SERVER_PORT: "8081"
   RABBITMQ_HOST: rabbitmq
+  RABBITMQ_PORT: "5672"
   OTEL_EXPORTER_OTLP_TRACES_ENDPOINT: http://otel-collector:4318/v1/traces
   LOGGING_STRUCTURED_FORMAT_CONSOLE: ecs
   DB_HOST: os-db
