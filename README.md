@@ -1,5 +1,9 @@
 # OS Service — Ordem de Serviço e orquestrador da Saga
 
+[![CI/CD](https://github.com/pedrocmoreira/os-service/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/pedrocmoreira/os-service/actions/workflows/ci-cd.yml)
+[![Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=pedrocmoreira_os-service&metric=alert_status)](https://sonarcloud.io/project/overview?id=pedrocmoreira_os-service)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=pedrocmoreira_os-service&metric=coverage)](https://sonarcloud.io/project/overview?id=pedrocmoreira_os-service)
+
 Microsserviço responsável pelo **ciclo de vida da Ordem de Serviço (OS)** da oficina e pela
 **orquestração da Saga** que coordena os demais serviços (Billing e Execution).
 
@@ -112,8 +116,7 @@ Ambiente completo (3 serviços + bancos + RabbitMQ + observabilidade): veja o re
   Relatório: `target/cucumber-report.html`.
 - **Evidência de cobertura (JaCoCo, `./mvnw verify`)**: 88 testes, **99,4% de linhas**, 89,4% de branches, 98,0% de instruções.
   Relatório HTML em `target/site/jacoco/index.html` (publicado como artefato `jacoco-report` em cada execução do CI).
-- **SonarCloud** no CI (Quality Gate obrigatório). Badge (substitua `SEU_PROJECT_KEY`):
-  `![Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=SEU_PROJECT_KEY&metric=alert_status)`
+- **SonarCloud** no CI (Quality Gate obrigatório): <https://sonarcloud.io/project/overview?id=pedrocmoreira_os-service>
 
 ## CI/CD
 `.github/workflows/ci-cd.yml`: **build + testes (gate 80%)** → **SonarCloud** → **imagem no GHCR** → **deploy Kubernetes**

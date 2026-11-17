@@ -21,7 +21,7 @@ spec:
       containers:
         - name: os-service
           # A pipeline de CI/CD substitui a imagem com "kubectl set image" (tag = SHA do commit)
-          image: ghcr.io/OWNER/os-service:latest
+          image: ghcr.io/pedrocmoreira/os-service:latest
           imagePullPolicy: IfNotPresent
           ports: [{containerPort: 8081}]
           envFrom:
