@@ -8,6 +8,7 @@ import org.hibernate.annotations.FetchMode;
 import java.math.BigDecimal;
 import java.time.Duration;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -105,6 +106,7 @@ public class ServiceOrder {
 
     public Long getExecutionTimeInMinutes() {
         if (executionStartDate == null || completionDate == null) return null;
-        return Duration.between(executionStartDate, completionDate).toMinutes();
+        ZoneId zone = ZoneId.systemDefault();
+        return Duration.between(executionStartDate.atZone(zone), completionDate.atZone(zone)).toMinutes();
     }
 }
